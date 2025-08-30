@@ -245,48 +245,27 @@ nav a:hover {
   }
 }
 
+/* Social Media Links */
+.social-links {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+.social-links a img {
+  width: 35px;
+  height: 35px;
+  transition: transform 0.3s, opacity 0.3s;
+}
+.social-links a img:hover {
+  transform: scale(1.2);
+  opacity: 0.8;
+}
+
 /* Footer */
 footer {
   text-align: center;
   padding: 20px;
   background: #111;
   font-size: 0.9em;
-}
-
-/* Thank You Page */
-.thankyou-page {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background: #121212;
-}
-.thankyou-container {
-  text-align: center;
-  background: #1a1a1a;
-  padding: 40px;
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.6);
-}
-.thankyou-container h1 {
-  font-size: 2em;
-  margin-bottom: 15px;
-  color: #4CAF50;
-}
-.thankyou-container p {
-  color: #ccc;
-  margin-bottom: 20px;
-}
-.thankyou-container .button {
-  display: inline-block;
-  padding: 12px 24px;
-  background: #4CAF50;
-  color: white;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background 0.3s;
-}
-.thankyou-container .button:hover {
-  background: #45a049;
 }
