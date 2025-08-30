@@ -73,7 +73,7 @@ nav a:hover {
   border-radius: 8px;
 }
 
-/* Contact */
+/* Contact Form Section */
 .contact {
   background: #1a1a1a;
   padding: 40px 20px;
@@ -117,6 +117,21 @@ nav a:hover {
   background: #45a049;
 }
 
+/* WhatsApp Contact Section */
+.whatsapp-contact {
+  text-align: center;
+  padding: 30px 0;
+}
+.whatsapp-contact img {
+  width: 60px;
+  height: 60px;
+  transition: transform 0.3s;
+  filter: drop-shadow(0 0 6px #25d366);
+}
+.whatsapp-contact img:hover {
+  transform: scale(1.1);
+}
+
 /* Footer */
 footer {
   text-align: center;
@@ -133,7 +148,6 @@ footer {
   height: 100vh;
   background: #121212;
 }
-
 .thankyou-container {
   text-align: center;
   background: #1a1a1a;
@@ -141,18 +155,15 @@ footer {
   border-radius: 12px;
   box-shadow: 0 0 20px rgba(0,0,0,0.6);
 }
-
 .thankyou-container h1 {
   font-size: 2em;
   margin-bottom: 15px;
   color: #4CAF50;
 }
-
 .thankyou-container p {
   color: #ccc;
   margin-bottom: 20px;
 }
-
 .thankyou-container .button {
   display: inline-block;
   padding: 12px 24px;
