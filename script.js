@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const prevBtn = document.querySelector('.gallery-btn.prev');
   const nextBtn = document.querySelector('.gallery-btn.next');
   const dotsContainer = document.querySelector('.gallery-dots');
+  const galleryWrapper = document.querySelector('.gallery-wrapper');
   let currentIndex = 0;
   let autoSlideInterval;
 
@@ -20,8 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   const dots = dotsContainer.querySelectorAll('button');
 
-  function updateSlider() {
+  function updateSlider(smooth = true) {
     const slideWidth = gallery.clientWidth;
+    gallery.style.transition = smooth ? 'transform 0.3s ease' : 'none';
     gallery.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
 
     // Update dots
@@ -52,20 +54,54 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Touch controls (mobile swipe)
+  // Touch controls (mobile swipe with drag + momentum + rubber-band)
   let startX = 0;
-  gallery.addEventListener('touchstart', e => {
+  let currentX = 0;
+  let isDragging = false;
+  let startTime = 0;
+
+  galleryWrapper.addEventListener('touchstart', e => {
     startX = e.touches[0].clientX;
+    currentX = startX;
+    isDragging = true;
+    startTime = Date.now();
+    gallery.style.transition = 'none'; // disable snap while dragging
   });
-  gallery.addEventListener('touchend', e => {
-    let endX = e.changedTouches[0].clientX;
-    if (startX - endX > 50) {
-      nextSlide();
-      resetAutoSlide();
-    } else if (endX - startX > 50) {
-      prevSlide();
-      resetAutoSlide();
+
+  galleryWrapper.addEventListener('touchmove', e => {
+    if (!isDragging) return;
+    currentX = e.touches[0].clientX;
+    const deltaX = currentX - startX;
+    const slideWidth = gallery.clientWidth;
+
+    // Check rubber-band effect (first/last slide)
+    if ((currentIndex === 0 && deltaX > 0) || (currentIndex === slides.length - 1 && deltaX < 0)) {
+      gallery.style.transform = `translateX(${-currentIndex * slideWidth + deltaX / 3}px)`; 
+    } else {
+      gallery.style.transform = `translateX(${-currentIndex * slideWidth + deltaX}px)`;
     }
+  });
+
+  galleryWrapper.addEventListener('touchend', () => {
+    if (!isDragging) return;
+    isDragging = false;
+    const deltaX = currentX - startX;
+    const elapsedTime = Date.now() - startTime;
+
+    const swipeSpeed = Math.abs(deltaX / elapsedTime); // px per ms
+
+    if ((deltaX > 50 || (swipeSpeed > 0.3 && deltaX > 0)) && currentIndex > 0) {
+      // swipe right
+      prevSlide();
+    } else if ((deltaX < -50 || (swipeSpeed > 0.3 && deltaX < 0)) && currentIndex < slides.length - 1) {
+      // swipe left
+      nextSlide();
+    } else {
+      // snap back
+      updateSlider();
+    }
+
+    resetAutoSlide();
   });
 
   // Auto-slide every 5 seconds
@@ -80,13 +116,12 @@ document.addEventListener('DOMContentLoaded', () => {
     startAutoSlide();
   }
 
-  // Pause on hover (desktop)
-  const galleryWrapper = document.querySelector('.gallery-wrapper');
+  // Pause on hover (desktop only)
   galleryWrapper.addEventListener('mouseenter', stopAutoSlide);
   galleryWrapper.addEventListener('mouseleave', startAutoSlide);
 
   // Init
-  window.addEventListener('resize', updateSlider);
-  updateSlider();
+  window.addEventListener('resize', () => updateSlider(false));
+  updateSlider(false);
   startAutoSlide();
 });
