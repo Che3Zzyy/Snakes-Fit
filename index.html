@@ -10,7 +10,7 @@
 
   <!-- Header -->
   <header>
-    <img src="images/SnakesfitLogo.png" alt="SnakesFit Training Logo" class="logo">
+    <img src="SnakesfitLogo.png" alt="SnakesFit Training Logo" class="logo">
     <h1>SnakesFit Training</h1>
     <nav>
       <a href="#about">About</a>
@@ -50,6 +50,10 @@
     <h2>Get in Touch</h2>
     <p>Please fill in the form below and I’ll get back to you as soon as I can!</p>
     <form action="https://formsubmit.co/YOUR_EMAIL" method="POST">
+      <!-- Redirect to Thank You page -->
+      <input type="hidden" name="_next" value="https://yourdomain.com/thankyou.html">
+      <input type="hidden" name="_captcha" value="false">
+
       <label>Name (required)</label>
       <input type="text" name="name" required>
 
