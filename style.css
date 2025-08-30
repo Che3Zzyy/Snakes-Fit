@@ -101,6 +101,30 @@ nav a:hover {
   right: 10px;
 }
 
+/* Gallery Dots */
+.gallery-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 15px;
+}
+.gallery-dots button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: #555;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+.gallery-dots button.active {
+  background: #4CAF50;
+  transform: scale(1.2);
+}
+.gallery-dots button:hover {
+  background: #888;
+}
+
 /* Show buttons only on desktop */
 @media (min-width: 768px) {
   .gallery-btn {
