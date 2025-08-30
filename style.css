@@ -289,10 +289,38 @@ nav a:hover {
   border-color: #fff;
 }
 
-/* Hover effect */
-.social-links a:hover {
+/* Hover effects with pulsing glow */
+.social-links a[href*="facebook"]:hover {
   transform: scale(1.15);
   background: #2a2a2a;
+  animation: pulse-facebook 1.5s infinite;
+}
+.social-links a[href*="instagram"]:hover {
+  transform: scale(1.15);
+  background: #2a2a2a;
+  animation: pulse-instagram 1.5s infinite;
+}
+.social-links a[href*="tiktok"]:hover {
+  transform: scale(1.15);
+  background: #2a2a2a;
+  animation: pulse-tiktok 1.5s infinite;
+}
+
+/* Keyframes for pulsing glow */
+@keyframes pulse-facebook {
+  0% { box-shadow: 0 0 5px #1877F2; }
+  50% { box-shadow: 0 0 20px #1877F2; }
+  100% { box-shadow: 0 0 5px #1877F2; }
+}
+@keyframes pulse-instagram {
+  0% { box-shadow: 0 0 5px #E4405F; }
+  50% { box-shadow: 0 0 20px #E4405F; }
+  100% { box-shadow: 0 0 5px #E4405F; }
+}
+@keyframes pulse-tiktok {
+  0% { box-shadow: 0 0 5px #fff; }
+  50% { box-shadow: 0 0 20px #fff; }
+  100% { box-shadow: 0 0 5px #fff; }
 }
 
 /* Footer */
@@ -302,3 +330,4 @@ footer {
   background: #111;
   font-size: 0.9em;
 }
+
