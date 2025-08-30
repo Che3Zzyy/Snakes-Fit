@@ -245,21 +245,54 @@ nav a:hover {
   }
 }
 
-/* Social Media Links */
+/* Social Media Heading */
+.social-heading {
+  margin-top: 40px;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #ccc;
+  text-align: center;
+}
+
+/* Social Media Buttons */
 .social-links {
   margin-top: 20px;
   display: flex;
   justify-content: center;
-  gap: 15px;
+  gap: 20px;
+}
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 55px;
+  height: 55px;
+  background: #1f1f1f;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+  transition: transform 0.3s, background 0.3s, border 0.3s;
+  border: 2px solid transparent;
 }
 .social-links a img {
-  width: 35px;
-  height: 35px;
-  transition: transform 0.3s, opacity 0.3s;
+  width: 28px;
+  height: 28px;
 }
-.social-links a img:hover {
-  transform: scale(1.2);
-  opacity: 0.8;
+
+/* Brand-colored borders */
+.social-links a[href*="facebook"] {
+  border-color: #1877F2;
+}
+.social-links a[href*="instagram"] {
+  border-color: #E4405F;
+}
+.social-links a[href*="tiktok"] {
+  border-color: #fff;
+}
+
+/* Hover effect */
+.social-links a:hover {
+  transform: scale(1.15);
+  background: #2a2a2a;
 }
 
 /* Footer */
