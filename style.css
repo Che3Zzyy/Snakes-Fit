@@ -192,7 +192,11 @@ nav a:hover { color: #4CAF50; }
   background: #181818;
   text-align: center;
 }
-.sponsors h2 { font-size: 1.8em; margin-bottom: 25px; color: #800000; }
+.sponsors h2 { 
+  font-size: 1.8em; 
+  margin-bottom: 25px; 
+  color: #800000; /* Maroon */
+}
 .sponsor-logos {
   display: flex;
   justify-content: center;
@@ -223,6 +227,11 @@ nav a:hover { color: #4CAF50; }
   background: #1a1a1a;
   padding: 40px 20px;
   text-align: center;
+}
+.contact h2 {
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  color: #800000; /* Maroon */
 }
 .contact form {
   max-width: 500px;
