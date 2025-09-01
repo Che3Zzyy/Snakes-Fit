@@ -80,7 +80,7 @@ nav a:hover { color: #4CAF50; }
 .kids li .icon {
   color: #4CAF50;
   font-size: 1.3em;
-  animation: pulse-glow 2s infinite; /* glowing */
+  animation: pulse-glow 2s infinite;
   transition: transform 0.3s ease, color 0.3s ease;
 }
 .kids li:hover .icon {
@@ -125,8 +125,6 @@ nav a:hover { color: #4CAF50; }
   max-height: 100px;
   object-fit: contain;
   display: block;
-  filter: none !important;
-  opacity: 1 !important;
 }
 
 /* Contact Section */
@@ -211,17 +209,6 @@ nav a:hover { color: #4CAF50; }
   border: 2px solid transparent;
 }
 .social-links a img { width: 28px; height: 28px; }
-
-/* Scroll Reveal */
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s ease;
-}
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-}
 
 /* Footer */
 footer {
