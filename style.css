@@ -33,10 +33,15 @@ nav a:hover { color: #4CAF50; }
 .hero {
   text-align: center;
   padding: 35px 20px;
-  background: #800000;
+  background: #800000; /* Maroon */
+  border-radius: 10px; /* Box style */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6); /* Depth */
+  max-width: 900px;
+  margin: 30px auto; /* Centered */
+  color: #fff;
 }
 .hero h2 { font-size: 1.8em; margin-bottom: 8px; }
-.hero p { font-size: 1.1em; color: #ccc; }
+.hero p { font-size: 1.1em; color: #f0f0f0; }
 
 /* About */
 .about {
@@ -303,7 +308,6 @@ footer {
   background: #111;
   font-size: 0.9em;
 }
-
 
 /* Thank You Page */
 .thankyou-page {
