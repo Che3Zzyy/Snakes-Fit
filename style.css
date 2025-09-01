@@ -33,7 +33,7 @@ nav a:hover { color: #4CAF50; }
 .hero {
   text-align: center;
   padding: 35px 20px;
-  background: #222;
+  background: #800000;
 }
 .hero h2 { font-size: 1.8em; margin-bottom: 8px; }
 .hero p { font-size: 1.1em; color: #ccc; }
