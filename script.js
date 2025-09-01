@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Touch controls (mobile swipe with drag + momentum + rubber-band)
+  // Touch controls (swipe with momentum + rubber-band)
   let startX = 0;
   let currentX = 0;
   let isDragging = false;
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const deltaX = currentX - startX;
     const slideWidth = gallery.clientWidth;
 
-    // Check rubber-band effect (first/last slide)
+    // Rubber-band effect on first/last slide
     if ((currentIndex === 0 && deltaX > 0) || (currentIndex === slides.length - 1 && deltaX < 0)) {
       gallery.style.transform = `translateX(${-currentIndex * slideWidth + deltaX / 3}px)`; 
     } else {
@@ -91,13 +91,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const swipeSpeed = Math.abs(deltaX / elapsedTime); // px per ms
 
     if ((deltaX > 50 || (swipeSpeed > 0.3 && deltaX > 0)) && currentIndex > 0) {
-      // swipe right
       prevSlide();
     } else if ((deltaX < -50 || (swipeSpeed > 0.3 && deltaX < 0)) && currentIndex < slides.length - 1) {
-      // swipe left
       nextSlide();
     } else {
-      // snap back
       updateSlider();
     }
 
@@ -125,3 +122,26 @@ document.addEventListener('DOMContentLoaded', () => {
   updateSlider(false);
   startAutoSlide();
 });
+
+
+// ======================
+// Scroll Reveal Animation
+// ======================
+function revealOnScroll() {
+  const reveals = document.querySelectorAll(".reveal");
+  const windowHeight = window.innerHeight;
+
+  reveals.forEach((el) => {
+    const elementTop = el.getBoundingClientRect().top;
+    const revealPoint = 100;
+
+    if (elementTop < windowHeight - revealPoint) {
+      el.classList.add("active");
+    } else {
+      el.classList.remove("active"); // remove if you want re-trigger
+    }
+  });
+}
+
+window.addEventListener("scroll", revealOnScroll);
+window.addEventListener("load", revealOnScroll);
