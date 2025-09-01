@@ -303,3 +303,53 @@ footer {
   background: #111;
   font-size: 0.9em;
 }
+
+
+/* Thank You Page */
+.thankyou-page {
+  background: #121212;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.thankyou-container {
+  text-align: center;
+  background: #1a1a1a;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.6);
+  max-width: 500px;
+  width: 90%;
+}
+
+.thankyou-container h1 {
+  color: #4CAF50;
+  margin-bottom: 20px;
+}
+
+.thankyou-container p {
+  font-size: 1.1em;
+  color: #ccc;
+  margin-bottom: 30px;
+}
+
+.thankyou-container .button {
+  display: inline-block;
+  padding: 12px 24px;
+  background: #4CAF50;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.thankyou-container .button:hover {
+  background: #45a049;
+  transform: scale(1.05);
+}
