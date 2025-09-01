@@ -34,7 +34,7 @@ nav a:hover {
 /* Hero */
 .hero {
   text-align: center;
-  padding: 35px 20px; /* reduced padding */
+  padding: 35px 20px;
   background: #222;
 }
 .hero h2 {
@@ -89,7 +89,7 @@ nav a:hover {
   cursor: pointer;
   border-radius: 50%;
   transition: background 0.3s;
-  display: none; /* hidden by default (mobile) */
+  display: none;
 }
 .gallery-btn:hover {
   background: rgba(0,0,0,0.8);
@@ -154,16 +154,22 @@ nav a:hover {
   gap: 40px;
   flex-wrap: wrap;
 }
-.sponsor-logos img {
-  max-width: 220px;
-  max-height: 120px;
-  object-fit: contain;
-  filter: brightness(0) invert(1); /* logos appear white on dark */
-  transition: transform 0.3s, filter 0.3s;
+.sponsor-card {
+  background: #222;
+  padding: 15px 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
-.sponsor-logos img:hover {
-  transform: scale(1.1);
-  filter: brightness(1) invert(0); /* original color on hover */
+.sponsor-card:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.8);
+}
+.sponsor-card img {
+  max-width: 200px;
+  max-height: 100px;
+  object-fit: contain;
+  display: block;
 }
 
 /* Contact Form Section */
@@ -184,7 +190,7 @@ nav a:hover {
   margin-top: 15px;
   text-align: left;
 }
-.contact input, 
+.contact input,
 .contact textarea {
   width: 100%;
   padding: 10px;
