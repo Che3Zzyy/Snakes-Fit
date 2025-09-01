@@ -42,23 +42,35 @@ nav a:hover { color: #4CAF50; }
 .about {
   max-width: 800px;
   margin: 40px auto;
-  padding: 20px;
+  padding: 30px 20px;
+  background: #1a1a1a;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+  text-align: left;
+  line-height: 1.7em;
+}
+.about h2 {
+  margin-bottom: 20px;
+  color: #fff;
+  font-size: 1.8em;
   text-align: center;
+}
+.about p {
+  margin-bottom: 20px;
+  color: #ccc;
+  font-size: 1.05em;
 }
 .about-list {
   list-style: none;
   padding-left: 0;
-  margin: 20px auto;
-  max-width: 700px;
-  text-align: left;
-  line-height: 1.8em;
-  color: #ccc;
+  margin: 20px 0 0;
 }
 .about-list li {
   margin: 10px 0;
   padding-left: 25px;
   position: relative;
   font-size: 1.05em;
+  color: #ccc;
 }
 .about-list li::before {
   content: "✅";
