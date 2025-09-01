@@ -192,7 +192,7 @@ nav a:hover { color: #4CAF50; }
   background: #181818;
   text-align: center;
 }
-.sponsors h2 { font-size: 1.8em; margin-bottom: 25px; color: #fff; }
+.sponsors h2 { font-size: 1.8em; margin-bottom: 25px; color: #800000; }
 .sponsor-logos {
   display: flex;
   justify-content: center;
