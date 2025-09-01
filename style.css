@@ -211,10 +211,18 @@ nav a:hover { color: #4CAF50; }
   box-shadow: 0 4px 10px rgba(0,0,0,0.6);
   transition: transform 0.3s, box-shadow 0.3s;
 }
-.sponsor-card:hover {
-  transform: scale(1.08);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.8);
+
+/* Make sponsor logos clickable with hover effect */
+.sponsor-card a {
+  display: inline-block;
+  transition: transform 0.3s, filter 0.3s;
+  cursor: pointer;
 }
+.sponsor-card a:hover {
+  transform: scale(1.12);
+  filter: drop-shadow(0 0 10px #800000);
+}
+
 .sponsor-card img {
   max-width: 200px;
   max-height: 100px;
