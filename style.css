@@ -1,4 +1,6 @@
-/* General Layout */
+/* ================================
+   General Layout
+================================ */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -6,7 +8,9 @@ body {
   color: #eaeaea;
 }
 
-/* Header */
+/* ================================
+   Header
+================================ */
 header {
   text-align: center;
   padding: 20px;
@@ -31,7 +35,9 @@ nav a:hover {
   color: #4CAF50;
 }
 
-/* Hero */
+/* ================================
+   Hero Section
+================================ */
 .hero {
   text-align: center;
   padding: 35px 20px;
@@ -46,7 +52,9 @@ nav a:hover {
   color: #ccc;
 }
 
-/* About */
+/* ================================
+   About Section
+================================ */
 .about {
   max-width: 800px;
   margin: 40px auto;
@@ -54,7 +62,9 @@ nav a:hover {
   text-align: center;
 }
 
-/* Gallery Section */
+/* ================================
+   Gallery Section
+================================ */
 .gallery {
   padding: 40px 20px;
   text-align: center;
@@ -94,12 +104,8 @@ nav a:hover {
 .gallery-btn:hover {
   background: rgba(0,0,0,0.8);
 }
-.gallery-btn.prev {
-  left: 10px;
-}
-.gallery-btn.next {
-  right: 10px;
-}
+.gallery-btn.prev { left: 10px; }
+.gallery-btn.next { right: 10px; }
 
 /* Gallery Dots */
 .gallery-dots {
@@ -136,7 +142,9 @@ nav a:hover {
   }
 }
 
-/* Sponsors Section */
+/* ================================
+   Sponsors Section
+================================ */
 .sponsors {
   padding: 40px 20px;
   background: #181818;
@@ -170,9 +178,13 @@ nav a:hover {
   max-height: 100px;
   object-fit: contain;
   display: block;
+  filter: none !important;   /* always visible */
+  opacity: 1 !important;
 }
 
-/* Contact Form Section */
+/* ================================
+   Contact Section
+================================ */
 .contact {
   background: #1a1a1a;
   padding: 40px 20px;
@@ -216,7 +228,9 @@ nav a:hover {
   background: #45a049;
 }
 
-/* WhatsApp & Email Buttons */
+/* ================================
+   WhatsApp & Email Buttons
+================================ */
 .direct-contact {
   margin-top: 30px;
   text-align: center;
@@ -255,23 +269,16 @@ nav a:hover {
   width: 28px;
   height: 28px;
 }
-.contact-link[href*="wa.me"] {
-  border-color: #25D366;
-}
-.contact-link[href^="mailto:"] {
-  border-color: #1DA1F2;
-}
+.contact-link[href*="wa.me"] { border-color: #25D366; }
+.contact-link[href^="mailto:"] { border-color: #1DA1F2; }
 .contact-link:hover {
   background: #2a2a2a;
   transform: scale(1.05);
   box-shadow: 0 4px 12px rgba(0,0,0,0.7);
 }
-.contact-link[href*="wa.me"]:hover {
-  color: #25D366;
-}
-.contact-link[href^="mailto:"]:hover {
-  color: #1DA1F2;
-}
+.contact-link[href*="wa.me"]:hover { color: #25D366; }
+.contact-link[href^="mailto:"]:hover { color: #1DA1F2; }
+
 @media (min-width: 768px) {
   .contact-buttons {
     flex-direction: row;
@@ -281,7 +288,9 @@ nav a:hover {
   }
 }
 
-/* Social Media Heading */
+/* ================================
+   Social Media
+================================ */
 .social-heading {
   margin-top: 40px;
   font-size: 1.1em;
@@ -289,8 +298,6 @@ nav a:hover {
   color: #ccc;
   text-align: center;
 }
-
-/* Social Media Buttons */
 .social-links {
   margin-top: 20px;
   display: flex;
@@ -313,18 +320,10 @@ nav a:hover {
   width: 28px;
   height: 28px;
 }
-
 /* Brand-colored borders */
-.social-links a[href*="facebook"] {
-  border-color: #1877F2;
-}
-.social-links a[href*="instagram"] {
-  border-color: #E4405F;
-}
-.social-links a[href*="tiktok"] {
-  border-color: #fff;
-}
-
+.social-links a[href*="facebook"] { border-color: #1877F2; }
+.social-links a[href*="instagram"] { border-color: #E4405F; }
+.social-links a[href*="tiktok"] { border-color: #fff; }
 /* Hover effects with pulsing glow */
 .social-links a[href*="facebook"]:hover {
   transform: scale(1.15);
@@ -341,7 +340,6 @@ nav a:hover {
   background: #2a2a2a;
   animation: pulse-tiktok 1.5s infinite;
 }
-
 /* Keyframes for pulsing glow */
 @keyframes pulse-facebook {
   0% { box-shadow: 0 0 5px #1877F2; }
@@ -359,7 +357,9 @@ nav a:hover {
   100% { box-shadow: 0 0 5px #fff; }
 }
 
-/* Footer */
+/* ================================
+   Footer
+================================ */
 footer {
   text-align: center;
   padding: 20px;
