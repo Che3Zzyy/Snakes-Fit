@@ -22,8 +22,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const dots = dotsContainer.querySelectorAll('button');
 
   function updateSlider(smooth = true) {
-    const slideWidth = gallery.clientWidth;
-    gallery.style.transition = smooth ? 'transform 0.3s ease' : 'none';
+    const slideWidth = galleryWrapper.clientWidth; // use wrapper width
+    gallery.style.transition = smooth ? 'transform 0.4s ease' : 'none';
     gallery.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
 
     // Update dots
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Touch controls (swipe with momentum + rubber-band)
+  // Touch controls (swipe)
   let startX = 0;
   let currentX = 0;
   let isDragging = false;
@@ -65,16 +65,15 @@ document.addEventListener('DOMContentLoaded', () => {
     currentX = startX;
     isDragging = true;
     startTime = Date.now();
-    gallery.style.transition = 'none'; // disable snap while dragging
+    gallery.style.transition = 'none'; 
   });
 
   galleryWrapper.addEventListener('touchmove', e => {
     if (!isDragging) return;
     currentX = e.touches[0].clientX;
     const deltaX = currentX - startX;
-    const slideWidth = gallery.clientWidth;
+    const slideWidth = galleryWrapper.clientWidth;
 
-    // Rubber-band effect
     if ((currentIndex === 0 && deltaX > 0) || (currentIndex === slides.length - 1 && deltaX < 0)) {
       gallery.style.transform = `translateX(${-currentIndex * slideWidth + deltaX / 3}px)`; 
     } else {
@@ -87,8 +86,9 @@ document.addEventListener('DOMContentLoaded', () => {
     isDragging = false;
     const deltaX = currentX - startX;
     const elapsedTime = Date.now() - startTime;
+    const slideWidth = galleryWrapper.clientWidth;
 
-    const swipeSpeed = Math.abs(deltaX / elapsedTime); // px per ms
+    const swipeSpeed = Math.abs(deltaX / elapsedTime);
 
     if ((deltaX > 50 || (swipeSpeed > 0.3 && deltaX > 0)) && currentIndex > 0) {
       prevSlide();
@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
     startAutoSlide();
   }
 
-  // Pause on hover (desktop)
+  // Pause on hover
   galleryWrapper.addEventListener('mouseenter', stopAutoSlide);
   galleryWrapper.addEventListener('mouseleave', startAutoSlide);
 
