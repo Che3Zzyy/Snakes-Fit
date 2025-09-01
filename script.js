@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Touch controls (mobile swipe with drag + momentum + rubber-band)
+  // Touch controls (swipe with momentum + rubber-band)
   let startX = 0;
   let currentX = 0;
   let isDragging = false;
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const deltaX = currentX - startX;
     const slideWidth = gallery.clientWidth;
 
-    // Rubber-band effect (first/last slide)
+    // Rubber-band effect
     if ((currentIndex === 0 && deltaX > 0) || (currentIndex === slides.length - 1 && deltaX < 0)) {
       gallery.style.transform = `translateX(${-currentIndex * slideWidth + deltaX / 3}px)`; 
     } else {
@@ -91,20 +91,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const swipeSpeed = Math.abs(deltaX / elapsedTime); // px per ms
 
     if ((deltaX > 50 || (swipeSpeed > 0.3 && deltaX > 0)) && currentIndex > 0) {
-      // swipe right
       prevSlide();
     } else if ((deltaX < -50 || (swipeSpeed > 0.3 && deltaX < 0)) && currentIndex < slides.length - 1) {
-      // swipe left
       nextSlide();
     } else {
-      // snap back
       updateSlider();
     }
 
     resetAutoSlide();
   });
 
-  // Auto-slide every 5 seconds
+  // Auto-slide every 5s
   function startAutoSlide() {
     autoSlideInterval = setInterval(nextSlide, 5000);
   }
@@ -116,7 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
     startAutoSlide();
   }
 
-  // Pause on hover (desktop only)
+  // Pause on hover (desktop)
   galleryWrapper.addEventListener('mouseenter', stopAutoSlide);
   galleryWrapper.addEventListener('mouseleave', startAutoSlide);
 
