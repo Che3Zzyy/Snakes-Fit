@@ -38,79 +38,6 @@ nav a:hover { color: #4CAF50; }
 .hero h2 { font-size: 1.8em; margin-bottom: 8px; }
 .hero p { font-size: 1.1em; color: #ccc; }
 
-/* Gallery */
-.gallery {
-  padding: 40px 20px;
-  text-align: center;
-}
-.gallery-wrapper {
-  position: relative;
-  max-width: 900px;
-  margin: 0 auto;
-  overflow: hidden;
-}
-.gallery-container {
-  display: flex;
-  width: 100%;
-}
-.gallery-container img {
-  flex: 0 0 100%; /* each slide takes full width */
-  max-height: 500px;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-/* Gallery Buttons */
-.gallery-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0,0,0,0.5);
-  border: none;
-  color: #fff;
-  font-size: 2em;
-  padding: 10px 15px;
-  cursor: pointer;
-  border-radius: 50%;
-  transition: background 0.3s;
-  display: none; /* hide on mobile */
-}
-.gallery-btn:hover {
-  background: rgba(0,0,0,0.8);
-}
-.gallery-btn.prev { left: 10px; }
-.gallery-btn.next { right: 10px; }
-
-/* Gallery Dots */
-.gallery-dots {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 15px;
-}
-.gallery-dots button {
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  border: none;
-  background: #555;
-  cursor: pointer;
-  transition: background 0.3s, transform 0.3s;
-}
-.gallery-dots button.active {
-  background: #4CAF50;
-  transform: scale(1.2);
-}
-.gallery-dots button:hover {
-  background: #888;
-}
-
-/* Show buttons on desktop */
-@media (min-width: 768px) {
-  .gallery-btn { display: block; }
-  .gallery-container img { max-height: 600px; object-fit: contain; }
-}
-
 /* About */
 .about {
   max-width: 800px;
@@ -166,6 +93,107 @@ nav a:hover { color: #4CAF50; }
   0%   { text-shadow: 0 0 4px #4CAF50; }
   50%  { text-shadow: 0 0 12px #4CAF50; }
   100% { text-shadow: 0 0 4px #4CAF50; }
+}
+
+/* Gallery */
+.gallery {
+  padding: 40px 20px;
+  text-align: center;
+}
+.gallery-wrapper {
+  position: relative;
+  max-width: 1100px;
+  margin: 0 auto;
+  overflow: hidden;
+  background: #181818;
+  border-radius: 8px;
+}
+.gallery-container {
+  display: flex;
+  flex-wrap: nowrap;
+  will-change: transform;
+}
+.gallery-container img {
+  flex: 0 0 100%;
+  width: 100%;
+  height: auto;
+  max-height: 600px;
+  object-fit: contain;
+  display: block;
+  border-radius: 8px;
+}
+
+/* Gallery Buttons */
+.gallery-btn {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  border: none;
+  color: #fff;
+  font-size: 2em;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background 0.3s;
+  display: none;
+}
+.gallery-btn:hover { background: rgba(0,0,0,0.8); }
+.gallery-btn.prev { left: 10px; }
+.gallery-btn.next { right: 10px; }
+
+/* Dots */
+.gallery-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+.gallery-dots button {
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  border: none;
+  background: #555;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+}
+.gallery-dots button.active {
+  background: #4CAF50;
+  transform: scale(1.2);
+}
+.gallery-dots button:hover { background: #888; }
+
+/* Desktop */
+@media (min-width: 768px) {
+  .gallery-btn { display: block; }
+  .gallery-container img {
+    max-height: 620px;
+    object-fit: contain;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .gallery-container img {
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 6px;
+  }
+  .gallery-dots button {
+    width: 18px; height: 18px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 420px) {
+  .gallery-container img {
+    max-height: 240px;
+    object-fit: cover;
+  }
+  .gallery-dots button {
+    width: 20px; height: 20px;
+  }
 }
 
 /* Sponsors Section */
