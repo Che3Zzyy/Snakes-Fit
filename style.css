@@ -34,15 +34,15 @@ nav a:hover {
 /* Hero */
 .hero {
   text-align: center;
-  padding: 20px 20px;
+  padding: 35px 20px; /* reduced padding */
   background: #222;
 }
 .hero h2 {
-  font-size: 2em;
-  margin-bottom: 10px;
+  font-size: 1.8em;
+  margin-bottom: 8px;
 }
 .hero p {
-  font-size: 1.2em;
+  font-size: 1.1em;
   color: #ccc;
 }
 
@@ -134,6 +134,36 @@ nav a:hover {
     max-height: 600px;
     object-fit: contain;
   }
+}
+
+/* Sponsors Section */
+.sponsors {
+  padding: 40px 20px;
+  background: #181818;
+  text-align: center;
+}
+.sponsors h2 {
+  font-size: 1.8em;
+  margin-bottom: 25px;
+  color: #fff;
+}
+.sponsor-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.sponsor-logos img {
+  max-width: 220px;
+  max-height: 120px;
+  object-fit: contain;
+  filter: brightness(0) invert(1); /* logos appear white on dark */
+  transition: transform 0.3s, filter 0.3s;
+}
+.sponsor-logos img:hover {
+  transform: scale(1.1);
+  filter: brightness(1) invert(0); /* original color on hover */
 }
 
 /* Contact Form Section */
@@ -330,4 +360,3 @@ footer {
   background: #111;
   font-size: 0.9em;
 }
-
