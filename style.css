@@ -21,23 +21,49 @@ header h1 {
   margin: 10px 0;
   font-size: 2em;
 }
+
+/* Navigation */
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  position: relative;
+}
 nav a {
-  margin: 0 15px;
+  margin: 0 10px;
   color: #eaeaea;
   text-decoration: none;
   font-weight: bold;
 }
 nav a:hover { color: #4CAF50; }
 
+/* Personal Training Button */
+nav .cta-button {
+  margin-left: auto;            /* Pushes button to the right */
+  background: #800000;          /* Maroon */
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s, transform 0.2s;
+}
+nav .cta-button:hover {
+  background: #a00000;
+  transform: scale(1.05);
+}
+
 /* Hero */
 .hero {
   text-align: center;
   padding: 35px 20px;
   background: #800000; /* Maroon */
-  border-radius: 10px; /* Box style */
-  box-shadow: 0 4px 12px rgba(0,0,0,0.6); /* Depth */
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
   max-width: 900px;
-  margin: 30px auto; /* Centered */
+  margin: 30px auto;
   color: #fff;
 }
 .hero h2 { font-size: 1.8em; margin-bottom: 8px; }
@@ -195,7 +221,7 @@ nav a:hover { color: #4CAF50; }
 .sponsors h2 { 
   font-size: 1.8em; 
   margin-bottom: 25px; 
-  color: #800000; /* Maroon */
+  color: #800000;
 }
 .sponsor-logos {
   display: flex;
@@ -211,8 +237,6 @@ nav a:hover { color: #4CAF50; }
   box-shadow: 0 4px 10px rgba(0,0,0,0.6);
   transition: transform 0.3s, box-shadow 0.3s;
 }
-
-/* Make sponsor logos clickable with hover effect */
 .sponsor-card a {
   display: inline-block;
   transition: transform 0.3s, filter 0.3s;
@@ -222,7 +246,6 @@ nav a:hover { color: #4CAF50; }
   transform: scale(1.12);
   filter: drop-shadow(0 0 10px #800000);
 }
-
 .sponsor-card img {
   max-width: 200px;
   max-height: 100px;
@@ -239,7 +262,7 @@ nav a:hover { color: #4CAF50; }
 .contact h2 {
   font-size: 1.8em;
   margin-bottom: 20px;
-  color: #800000; /* Maroon */
+  color: #800000;
 }
 .contact form {
   max-width: 500px;
@@ -337,7 +360,6 @@ footer {
   min-height: 100vh;
   margin: 0;
 }
-
 .thankyou-container {
   text-align: center;
   background: #1a1a1a;
@@ -347,18 +369,15 @@ footer {
   max-width: 500px;
   width: 90%;
 }
-
 .thankyou-container h1 {
   color: #4CAF50;
   margin-bottom: 20px;
 }
-
 .thankyou-container p {
   font-size: 1.1em;
   color: #ccc;
   margin-bottom: 30px;
 }
-
 .thankyou-container .button {
   display: inline-block;
   padding: 12px 24px;
@@ -369,7 +388,6 @@ footer {
   font-weight: bold;
   transition: background 0.3s, transform 0.3s;
 }
-
 .thankyou-container .button:hover {
   background: #45a049;
   transform: scale(1.05);
