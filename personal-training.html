@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Personal Training Interest Form | SnakesFit Training</title>
+  <link rel="stylesheet" href="personal-training.css">
+</head>
+<body class="form-page">
+
+  <div class="form-container">
+    <h1>Personal Training Interest Form</h1>
+    <p>Thank you for your interest in training with me! Please complete the form below so I can learn more about your goals and how I can best support your fitness journey.</p>
+
+    <form action="https://formsubmit.co/kevsnakesmma@gmail.com" method="POST">
+      <!-- Redirect to thank-you page -->
+      <input type="hidden" name="_next" value="https://che3zzyy.github.io/Snakes-Fit/thankyou.html">
+      <input type="hidden" name="_captcha" value="false">
+
+      <h3>Personal Information</h3>
+      <label>Full Name:</label>
+      <input type="text" name="Full Name" required>
+
+      <label>Date of Birth:</label>
+      <input type="date" name="Date of Birth">
+
+      <label>Phone Number:</label>
+      <input type="text" name="Phone">
+
+      <label>Email Address:</label>
+      <input type="email" name="Email" required>
+
+      <label>Preferred Method of Contact:</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="Contact Method" value="WhatsApp"> WhatsApp</label>
+        <label><input type="checkbox" name="Contact Method" value="Email"> Email</label>
+      </div>
+
+      <h3>Fitness Goals</h3>
+      <p>(Check all that apply)</p>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="Goals" value="Weight Loss"> Weight Loss</label>
+        <label><input type="checkbox" name="Goals" value="Muscle Gain"> Muscle Gain</label>
+        <label><input type="checkbox" name="Goals" value="Strength Training"> Strength Training</label>
+        <label><input type="checkbox" name="Goals" value="Endurance"> Endurance / Cardio</label>
+        <label><input type="checkbox" name="Goals" value="General Fitness"> General Fitness</label>
+        <label><input type="checkbox" name="Goals" value="Boxing & MMA"> Boxing & MMA Training</label>
+        <label><input type="checkbox" name="Goals" value="Self-Defence"> Self-Defence Training</label>
+        <label><input type="checkbox" name="Goals" value="Kids Classes"> Kids’ Classes / Bullying Prevention</label>
+      </div>
+      <label>Other:</label>
+      <input type="text" name="Other Goals">
+
+      <label>What motivates you to start training now?</label>
+      <textarea name="Motivation"></textarea>
+
+      <label>Have you worked with a personal trainer before?</label>
+      <div class="checkbox-group">
+        <label><input type="radio" name="Trainer Before" value="Yes"> Yes</label>
+        <label><input type="radio" name="Trainer Before" value="No"> No</label>
+      </div>
+      <label>If yes, how was your experience?</label>
+      <textarea name="Trainer Experience"></textarea>
+
+      <h3>Availability & Preferences</h3>
+      <p>Days available:</p>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="Days" value="Monday"> Monday</label>
+        <label><input type="checkbox" name="Days" value="Tuesday"> Tuesday</label>
+        <label><input type="checkbox" name="Days" value="Wednesday"> Wednesday</label>
+        <label><input type="checkbox" name="Days" value="Thursday"> Thursday</label>
+        <label><input type="checkbox" name="Days" value="Friday"> Friday</label>
+        <label><input type="checkbox" name="Days" value="Saturday"> Saturday</label>
+        <label><input type="checkbox" name="Days" value="Sunday"> Sunday</label>
+      </div>
+
+      <p>Preferred Time(s) of Day:</p>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="Time" value="Early Morning"> Early Morning (6–9am)</label>
+        <label><input type="checkbox" name="Time" value="Midday"> Midday (9am–12pm)</label>
+        <label><input type="checkbox" name="Time" value="Afternoon"> Afternoon (12–5pm)</label>
+        <label><input type="checkbox" name="Time" value="Evening"> Evening (5–8pm)</label>
+      </div>
+
+      <p>Preferred Training Style:</p>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="Style" value="1-on-1"> 1-on-1 In-Person</label>
+        <label><input type="checkbox" name="Style" value="Small Group"> Small Group (2–4 people)</label>
+        <label><input type="checkbox" name="Style" value="No Preference"> No Preference</label>
+      </div>
+
+      <h3>Health & Medical Information</h3>
+      <label>Do you have any current injuries, medical conditions, or limitations?</label>
+      <div class="checkbox-group">
+        <label><input type="radio" name="Injuries" value="Yes"> Yes</label>
+        <label><input type="radio" name="Injuries" value="No"> No</label>
+      </div>
+      <textarea name="Injury Details"></textarea>
+
+      <label>Are you currently taking any medications that may affect your training?</label>
+      <div class="checkbox-group">
+        <label><input type="radio" name="Medications" value="Yes"> Yes</label>
+        <label><input type="radio" name="Medications" value="No"> No</label>
+      </div>
+      <textarea name="Medication Details"></textarea>
+
+      <label>Anything else you’d like me to know?</label>
+      <textarea name="Other Notes"></textarea>
+
+      <button type="submit">Submit Form</button>
+    </form>
+  </div>
+</body>
+</html>
