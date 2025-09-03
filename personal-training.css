@@ -53,18 +53,27 @@ textarea {
   min-height: 80px;
 }
 
+/* Checkbox + Radio Groups */
 .checkbox-group {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* two columns */
+  gap: 12px 20px; /* space between rows and columns */
   margin: 10px 0 20px;
 }
 
 .checkbox-group label {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   font-size: 0.95em;
+  cursor: pointer;
+}
+
+.checkbox-group input[type="checkbox"],
+.checkbox-group input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #800000; /* Maroon color */
   cursor: pointer;
 }
 
@@ -85,4 +94,3 @@ button {
 button:hover {
   background: #a00000;
   transform: scale(1.05);
-}
